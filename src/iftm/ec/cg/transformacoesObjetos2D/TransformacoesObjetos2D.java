@@ -1,7 +1,8 @@
 /*
- * Criada em 21 de Agosto de 2018 
+ * MIT License - Copyright (c) 2018 Francielle da Silva Nunes
+ * Criada em 25 ago 2018 
  */
-package iftm.ec.cg.aula02.primitivas;
+package iftm.ec.cg.transformacoesObjetos2D;
 
 import com.jogamp.opengl.GL;
 import com.jogamp.opengl.GL2;
@@ -17,7 +18,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 /**
- *
+ * Classe criada para estudo de transformações de Objetos em 2D
+ * Essa classe cria um triângulo que de movimenta para cima, baixo, direita
+ * e esquerda de acordo com setas do teclado.
  * @author franciellenunes
  */
 public class TransformacoesObjetos2D implements GLEventListener, KeyListener {
@@ -47,7 +50,7 @@ public class TransformacoesObjetos2D implements GLEventListener, KeyListener {
         canvas.addGLEventListener(render);
 
         // cria uma janela e adiciona o painel
-        JFrame frame = new JFrame("Transformações Geomátricas 2D");
+        JFrame frame = new JFrame("Transformações Geométricas 2D");
         frame.getContentPane().add(canvas);
         frame.setSize(800, 800);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

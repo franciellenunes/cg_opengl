@@ -1,7 +1,8 @@
 /*
- * Criada em 01 de Agosto de 2018
+ * MIT License - Copyright (c) 2018 Francielle da Silva Nunes
+ * Criada em 25 ago 2018 
  */
-package iftm.ec.cg.aula01.introopengl;
+package iftm.ec.cg.introopengl;
 
 import javax.swing.JFrame;
 

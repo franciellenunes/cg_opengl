@@ -1,7 +1,8 @@
 /*
+ * MIT License - Copyright (c) 2018 Francielle da Silva Nunes
  * Criada em 14 de Agosto de 2018 
  */
-package iftm.ec.cg.aula02.primitivas;
+package iftm.ec.cg.primitivas;
 
 import com.jogamp.opengl.GL;
 import com.jogamp.opengl.GL2;
@@ -15,7 +16,7 @@ import javax.swing.JFrame;
 
 /**
  * Classe criada para aplicação de diferentes padrões de polígonos.
- *
+ * Permite o desenho de um casinha com diferentes padrões de preenchimento.
  * @author Francielle da Silva Nunes
  */
 public class Renderer implements GLEventListener {
