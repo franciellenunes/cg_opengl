@@ -1,6 +1,6 @@
 /*
  * MIT License - Copyright (c) 2018 Francielle da Silva Nunes
- * Criada em 01 set 2018 
+ * Criada em 02 set 2018 
  */
 package iftm.ec.cg.laboratorio1;
 
@@ -19,9 +19,9 @@ import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 
 /**
- * Classe criada para realização de exercício prático intitulado Laboratório 1 O
- * objetivo é aplicar os conceitos apresentados até o momento na disciplina
- * Desenho de esferas e aplicação de rotação em cada uma delas
+ * Classe criada para realização de exercício prático intitulado Laboratório 1 
+ * O objetivo é aplicar os conceitos apresentados até o momento na disciplina
+ * Desenho de esferas formando um sistema solar
  *
  * @author franciellenunes
  */
@@ -118,12 +118,79 @@ public class SistemaSolar implements GLEventListener, KeyListener {
 
     public void drawSpheres(GL2 gl, GLUT glut) {
 
-        // Esfera 1
+        // Sol
         gl.glPushMatrix();
         gl.glColor3f(1f, 1f, 0);
         glut.glutWireSphere(0.25f, 20, 20);
         gl.glPopMatrix();
-
+        
+        // Mercúrio
+        gl.glPushMatrix();
+        gl.glColor3f(0.230f, 0.184f, 0.117f);
+        gl.glTranslatef(0.3f, 0.25f, 0);
+        glut.glutWireSphere(0.03f, 20, 20);
+        gl.glPopMatrix();
+        
+        // Vênus
+        gl.glPushMatrix();        
+        gl.glColor3f(0.239f, 0.171f, 0.074f);
+        gl.glTranslatef(0.45f, 0.3f, 0);
+        glut.glutWireSphere(0.06f, 20, 20);
+        gl.glPopMatrix();
+        
+        // Terra
+        gl.glPushMatrix();                
+        gl.glColor3f(0.0f, 1f, 0.0f);
+        gl.glTranslatef(0.6f, 0.35f, 0);
+        glut.glutWireSphere(0.06f, 20, 20);
+        gl.glPopMatrix();
+        
+        // Lua
+        gl.glPushMatrix();                
+        gl.glColor3f(1f, 1f, 1f);
+        gl.glTranslatef(0.68f, 0.35f, 0);
+        glut.glutWireSphere(0.01f, 20, 20);
+        gl.glPopMatrix();
+        
+        // Marte
+        gl.glPushMatrix();           
+        gl.glColor3f(0.222f, 0.073f, 0.028f);
+        gl.glTranslatef(0.80f, 0.40f, 0);
+        glut.glutWireSphere(0.05f, 20, 20);
+        gl.glPopMatrix();
+        
+        // Jupiter
+        gl.glPushMatrix();           
+        gl.glColor3f(0.222f, 0.073f, 0.028f);
+        gl.glTranslatef(0.80f, 0.40f, 0);
+        glut.glutWireSphere(0.05f, 20, 20);
+        gl.glPopMatrix();
+        
+        // Saturno
+        gl.glPushMatrix();           
+        gl.glColor3f(1f, 1f, 1f);
+        gl.glTranslatef(-0.80f, 0.40f, 0);
+        
+        glut.glutWireTorus(0.05f, 0.10f, 30, 35);
+        
+        gl.glColor3f(1f, 0f, 0f);
+        glut.glutWireSphere(0.05f, 20, 20);
+        gl.glPopMatrix();
+         
+        // Urano
+        gl.glPushMatrix();           
+        gl.glColor3f(0.222f, 0.073f, 0.028f);
+        gl.glTranslatef(0.80f, 0.40f, 0);
+        glut.glutWireSphere(0.05f, 20, 20);
+        gl.glPopMatrix();
+        
+        // Netuno
+        gl.glPushMatrix();           
+        gl.glColor3f(0.222f, 0.073f, 0.028f);
+        gl.glTranslatef(0.80f, 0.40f, 0);
+        glut.glutWireSphere(0.05f, 20, 20);
+        gl.glPopMatrix();
+                
         gl.glFlush();
     }
 }
