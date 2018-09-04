@@ -29,18 +29,12 @@ public class Quadrados implements GLEventListener, KeyListener {
 
     private float scale;
     private float angle;
-    private float alpha;
-    private float beta;
-    private float delta;
 
     float[] m = {1, 0.5f, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1};
 
     public Quadrados() {
         scale = 1.0f;
         angle = 0.0f;
-        alpha = 0;
-        beta = 0;
-        delta = 1.f;
     }
 
     public static void main(String[] args) {
@@ -133,18 +127,26 @@ public class Quadrados implements GLEventListener, KeyListener {
     }
 
     public void drawSquares(GL2 gl) {
+        // Quadrado 1
+        gl.glPushMatrix();
         gl.glScalef(scale, scale, 1.0f);
         gl.glRotatef(angle, 1.0f, 0.0f, 0.0f);
         gl.glMultMatrixf(m, 0);
         gl.glColor3f(1.0f, 1.0f, 1.0f);
-
-        // Quadrado 1
         gl.glRectf(-0.5f, -0.5f, 0.5f, 0.5f);
-
+        gl.glPopMatrix();
+        
         // Quadrado 2
-        gl.glColor3f(0.0f, 0.0f, 1.0f);
-        gl.glRectf(0.25f, 0.25f, 0.75f, 0.75f);
+        gl.glPushMatrix();
+        gl.glTranslatef(0.25f, 0.25f, 0);
+        gl.glScalef(scale, scale, 1.0f);
+        gl.glRotatef(angle, 1.0f, 0.0f, 0.0f);
+        gl.glMultMatrixf(m, 0);
 
+        gl.glColor3f(0.0f, 0.0f, 1.0f);
+        gl.glTranslatef(0, 0, 0);
+        gl.glRectf(0.25f, 0.25f, 0.75f, 0.75f);
+        gl.glPopMatrix();
         gl.glFlush();
     }   
 }

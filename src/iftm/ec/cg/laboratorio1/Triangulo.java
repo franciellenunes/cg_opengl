@@ -27,7 +27,13 @@ import javax.swing.JFrame;
  */
 public class Triangulo implements GLEventListener, KeyListener {
 
-    public static float[] m = {1, 0, 0, 0, -1, 0, 0, 0, 1};
+    private float scalex;
+    private float scaley;
+
+    public Triangulo() {
+        scalex = 1.0f;
+        scaley = 1.0f;
+    }
 
     public static void main(String[] args) {
 
@@ -90,8 +96,12 @@ public class Triangulo implements GLEventListener, KeyListener {
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_UP:
+                scalex = 1.0f;
+                scaley = 1.0f;
                 break;
             case KeyEvent.VK_DOWN:
+                scalex = -1.0f;
+                scaley = -1.0f;
                 break;
         }
     }
@@ -101,7 +111,8 @@ public class Triangulo implements GLEventListener, KeyListener {
     }
 
     public void drawTriangle(GL2 gl) {
-        // gl.glMultMatrixf(m, 0);
+
+        gl.glScalef(scalex, scaley, 0);
         gl.glBegin(GL2.GL_TRIANGLES);
         gl.glColor3f(0.0f, 0.0f, 1.0f);
         gl.glVertex2f(-0.25f, -0.25f);

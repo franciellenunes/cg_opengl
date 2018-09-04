@@ -29,6 +29,7 @@ public class SistemaSolar implements GLEventListener, KeyListener {
 
     private float alpha;
     private float beta;
+    private float angle;
 
     float[] m = {1, 0.5f, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1};
 
@@ -97,12 +98,6 @@ public class SistemaSolar implements GLEventListener, KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {
-            case KeyEvent.VK_UP:
-                alpha = alpha - 1;
-                break;
-            case KeyEvent.VK_DOWN:
-                alpha = alpha + 1;
-                break;
             case KeyEvent.VK_LEFT:
                 beta = beta + 1;
                 break;
@@ -124,17 +119,20 @@ public class SistemaSolar implements GLEventListener, KeyListener {
         glut.glutWireSphere(0.25f, 20, 20);
         gl.glPopMatrix();
         
+        gl.glRotatef(beta, 0, 0, 1.0f);
+        
         // Mercúrio
         gl.glPushMatrix();
-        gl.glColor3f(0.230f, 0.184f, 0.117f);
+        gl.glColor3f(1f, 0f, 0f);
+        gl.glRotatef(angle, 1.0f, 0.0f, 0.0f);
         gl.glTranslatef(0.3f, 0.25f, 0);
         glut.glutWireSphere(0.03f, 20, 20);
         gl.glPopMatrix();
         
         // Vênus
         gl.glPushMatrix();        
-        gl.glColor3f(0.239f, 0.171f, 0.074f);
-        gl.glTranslatef(0.45f, 0.3f, 0);
+        gl.glColor3f(1f, 1f, 1f);
+        gl.glTranslatef(0.45f, -0.3f, 0);
         glut.glutWireSphere(0.06f, 20, 20);
         gl.glPopMatrix();
         
@@ -154,7 +152,7 @@ public class SistemaSolar implements GLEventListener, KeyListener {
         
         // Marte
         gl.glPushMatrix();           
-        gl.glColor3f(0.222f, 0.073f, 0.028f);
+        gl.glColor3f(1f, 0f, 0f);
         gl.glTranslatef(0.80f, 0.40f, 0);
         glut.glutWireSphere(0.05f, 20, 20);
         gl.glPopMatrix();
@@ -162,33 +160,33 @@ public class SistemaSolar implements GLEventListener, KeyListener {
         // Jupiter
         gl.glPushMatrix();           
         gl.glColor3f(0.222f, 0.073f, 0.028f);
-        gl.glTranslatef(0.80f, 0.40f, 0);
-        glut.glutWireSphere(0.05f, 20, 20);
+        gl.glTranslatef(-0.50f, -0.20f, 0);
+        glut.glutWireSphere(0.1f, 20, 20);
         gl.glPopMatrix();
         
         // Saturno
         gl.glPushMatrix();           
         gl.glColor3f(1f, 1f, 1f);
-        gl.glTranslatef(-0.80f, 0.40f, 0);
+        gl.glTranslatef(-0.60f, -0.50f, 0);
         
-        glut.glutWireTorus(0.05f, 0.10f, 30, 35);
+        glut.glutWireTorus(0.02f, 0.14f, 30, 35);
         
         gl.glColor3f(1f, 0f, 0f);
-        glut.glutWireSphere(0.05f, 20, 20);
+        glut.glutWireSphere(0.09f, 20, 20);
         gl.glPopMatrix();
          
         // Urano
         gl.glPushMatrix();           
-        gl.glColor3f(0.222f, 0.073f, 0.028f);
-        gl.glTranslatef(0.80f, 0.40f, 0);
-        glut.glutWireSphere(0.05f, 20, 20);
+        gl.glColor3f(0f, 0f, 1.0f);
+        gl.glTranslatef(-0.35f, 0.70f, 0);
+        glut.glutWireSphere(0.07f, 20, 20);
         gl.glPopMatrix();
         
         // Netuno
         gl.glPushMatrix();           
-        gl.glColor3f(0.222f, 0.073f, 0.028f);
-        gl.glTranslatef(0.80f, 0.40f, 0);
-        glut.glutWireSphere(0.05f, 20, 20);
+        gl.glColor3f(0f, 0f, 1.0f);
+        gl.glTranslatef(-0.5f, 0.80f, 0);
+        glut.glutWireSphere(0.06f, 20, 20);
         gl.glPopMatrix();
                 
         gl.glFlush();
